@@ -5,9 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-	<context:component-scan base-package="guru.springframework">
-		
-	</context:component-scan>
-
-
+	<context:component-scan base-package="guru.springframework"/>
+	
+	<import resource="classpath*:spring/helloworld-config.xml"/>
+	
+	<bean id="greetingController" class="guru.springframework.controllers.GreetingController">
+		<property name="helloWorldService" ref="helloWorldServiceDefault"/>
+		<property name="helloWorldServiceFrench" ref="french"/>
+		<property name="helloWorldServicePortuguese" ref="helloWorldServicePortuguese"/>
+	</bean>
+	
 </beans>

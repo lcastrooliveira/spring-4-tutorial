@@ -1,12 +1,8 @@
 package guru.springframework.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
-
 import guru.springframework.services.HelloWorldService;
 
-@Controller
+//@Controller
 public class GreetingController {
 
 	private HelloWorldService helloWorldService;
@@ -16,20 +12,20 @@ public class GreetingController {
 	private HelloWorldService helloWorldServiceFrench;
 	
 	//This autowires by type
-	@Autowired
+	//@Autowired
 	public void setHelloWorldService(HelloWorldService helloWorldService) {
 		this.helloWorldService = helloWorldService;
 	}
 	
 	//This autowires by name - @Qualifier changes bean injection policy
-	@Autowired
-	@Qualifier("helloWorldServicePortuguese") //same name of method in line 38 file HelloConfig.java
+	//@Autowired
+	//@Qualifier("helloWorldServicePortuguese") //same name of method in line 38 file HelloConfig.java
 	public void setHelloWorldServicePortuguese(HelloWorldService helloWorldServicePortuguese) {
 		this.helloWorldServicePortuguese = helloWorldServicePortuguese;
 	}
 	
-	@Autowired
-	@Qualifier("french") //same name of method in line x file HelloConfig.java
+	//@Autowired
+	//@Qualifier("french") //same name of method in line x file HelloConfig.java
 	public void setHelloWorldServiceFrench(HelloWorldService helloWorldServiceFrench) {
 		this.helloWorldServiceFrench = helloWorldServiceFrench;
 	}
